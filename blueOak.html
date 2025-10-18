@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUEOAKPROPERTYCARE - Professional Home Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 120px 5% 80px;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            animation: slideInLeft 0.8s ease;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            animation: slideInLeft 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: slideInLeft 0.8s ease 0.4s both;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: slideInRight 0.8s ease;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Quick Stats */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-card p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 5%;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* Service Filter */
+        .service-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            background: var(--white);
+            color: var(--primary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-card .see-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card .see-more:hover {
+            gap: 1rem;
+        }
+
+        /* Service Detail Modal */
+        .service-detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .service-detail-modal.active {
+            display: flex;
+        }
+
+        .service-detail-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideInUp 0.3s ease;
+        }
+
+        .service-detail-header {
+            position: relative;
+            height: 300px;
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+        }
+
+        .service-detail-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-detail-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+
+        .service-detail-title {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            color: var(--white);
+            z-index: 1;
+        }
+
+        .service-detail-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-detail-title .service-icon-large {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .service-detail-title .service-icon-large i {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .service-detail-body {
+            padding: 2rem 3rem;
+        }
+
+        .service-detail-description {
+            margin-bottom: 2rem;
+        }
+
+        .service-detail-description h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-detail-description p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-item i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .feature-item h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .service-detail-actions {
+            display: flex;
+            gap: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .btn-book-service {
+            flex: 1;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-book-service:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-quote {
+            flex: 1;
+            padding: 1rem;
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-quote:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .modal-close-detail {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .modal-close-detail:hover {
+            background: var(--white);
+            transform: rotate(90deg);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 80px 5%;
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border: 2px dashed var(--primary-color);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        .feature-icon i {
+            font-size: 2.5rem;
+            color: var(--white);
+            z-index: 1;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 5%;
+            background: var(--bg-light);
+        }
+
+        .testimonials-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--primary-color);
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,32L48,37.3C96,43,192,53,288,80C384,107,480,149,576,154.7C672,160,768,128,864,122.7C960,117,1056,139,1152,138.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            color: var(--white);
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 50px 5% 20px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Booking Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: slideInUp 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--text-dark);
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            z-index: 3000;
+        }
+
+        .toast.show {
+            bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-detail-body {
+                padding: 1.5rem;
+            }
+
+            .service-detail-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+
+            .service-detail-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <i class="fas fa-home"></i>
+                BLUEOAKPROPERTYCARE 
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="cta-button" onclick="openBookingModal()">Book Now</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Professional Home Services You Can Trust</h1>
+                <p>From plumbing to roofing, we provide comprehensive home improvement and maintenance services with expert professionals at your service.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn-secondary">Get Free Quote</a>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>500+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>13</h3>
+                        <p>Services</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>24/7</h3>
+                        <p>Emergency Support</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <h3>4.9</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="logoImage.webp" alt="Home Services">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Professional services for all your home needs, delivered with expertise and care</p>
+        </div>
+        
+        <div class="service-filter">
+            <button class="filter-btn active" onclick="filterServices('all')">All Services</button>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+            <!-- Services will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Service Detail Modal -->
+    <div class="service-detail-modal" id="serviceDetailModal">
+        <div class="service-detail-content">
+            <span class="modal-close-detail" onclick="closeServiceDetail()">&times;</span>
+            <div class="service-detail-header">
+                <img id="serviceDetailImage" src="" alt="">
+                <div class="service-detail-title">
+                    <div class="service-icon-large">
+                        <i id="serviceDetailIcon" class=""></i>
+                    </div>
+                    <h2 id="serviceDetailTitle"></h2>
+                </div>
+            </div>
+            <div class="service-detail-body">
+                <div class="service-detail-description">
+                    <h3>About This Service</h3>
+                    <p id="serviceDetailDescription"></p>
+                    <p id="serviceDetailDescription2"></p>
+                </div>
+                <div class="service-features" id="serviceFeatures">
+                    <!-- Features will be dynamically added -->
+                </div>
+                <div class="service-detail-actions">
+                    <button class="btn-book-service" onclick="bookServiceFromDetail()">Book This Service</button>
+                    <button class="btn-quote" onclick="getQuoteFromDetail()">Get Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="about">
+        <div class="section-header">
+            <h2>Why Choose BLUEOAKPROPERTYCARE ?</h2>
+            <p>We're committed to delivering exceptional service quality and customer satisfaction</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Licensed & Insured</h3>
+                <p>All our professionals are fully licensed, insured, and background-checked for your peace of mind.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>On-Time Service</h3>
+                <p>We respect your time. Our team arrives on schedule and completes work efficiently.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Satisfaction Guarantee</h3>
+                <p>Stand behind our work with a 100% satisfaction guarantee on all services.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3>Transparent Pricing</h3>
+                <p>No hidden fees. Get upfront pricing before any work begins.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock customer support for emergencies and inquiries.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>5-Star Rated</h3>
+                <p>Consistently rated 5 stars by our satisfied customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Real reviews from real customers who trust us with their homes</p>
+        </div>
+        <div class="testimonials-slider">
+            <div class="testimonial-card active">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"BLUEOAKPROPERTYCARE  transformed our kitchen! The carpentry and electrical work was flawless. The team was professional, punctual, and the quality exceeded our expectations."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <h4>John Davidson</h4>
+                        <p>Kitchen Renovation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Emergency plumbing service at 2 AM! They arrived within 30 minutes and fixed the issue quickly. Saved us from major water damage. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah Mitchell</h4>
+                        <p>Emergency Plumbing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The gardening team completely transformed our backyard. Professional design, perfect execution, and they cleaned up everything. Our garden looks amazing!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RT</div>
+                    <div class="author-info">
+                        <h4>Robert Thompson</h4>
+                        <p>Garden Landscaping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <span class="slider-dot active" onclick="showTestimonial(0)"></span>
+            <span class="slider-dot" onclick="showTestimonial(1)"></span>
+            <span class="slider-dot" onclick="showTestimonial(2)"></span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Ready to start your project? Contact us today for a free consultation and quote.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+442382447870</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@blueoakpropertycare.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>248 High Street, Eastleigh, England, SO50 5NA</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <h3>Request a Free Quote</h3>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="handyman">Handyman</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="carpentry">Carpentry</option>
+                        <option value="decorating">Decorating</option>
+                        <option value="locksmith">Locksmith</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="flooring">Flooring</option>
+                        <option value="roofing">Roofing</option>
+                        <option value="plastering">Plastering</option>
+                        <option value="gardening">Gardening</option>
+                        <option value="gutter-cleaning">Gutter Cleaning</option>
+                        <option value="removals">Removals</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BLUEOAKPROPERTYCARE </h3>
+                <p>Your trusted partner for all home improvement and maintenance needs. Quality service, guaranteed satisfaction.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#services">All Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Emergency Services</a></li>
+                    <li><a href="#">Home Maintenance</a></li>
+                    <li><a href="#">Renovations</a></li>
+                    <li><a href="#">Cleaning Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +442382447870</p>
+                <p><i class="fas fa-envelope"></i> support@blueoakpropertycare.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 248 High Street, Eastleigh, England, SO50 5NA</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BLUEOAKPROPERTYCARE . All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book Your Service</h2>
+            <form onsubmit="handleBooking(event)">
+                <div class="form-group">
+                    <label for="booking-service">Select Service</label>
+                    <select id="booking-service" required>
+                        <option value="">Choose a service</option>
+                        <option value="handyman">Handyman</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="carpentry">Carpentry</option>
+                        <option value="decorating">Decorating</option>
+                        <option value="locksmith">Locksmith</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="flooring">Flooring</option>
+                        <option value="roofing">Roofing</option>
+                        <option value="plastering">Plastering</option>
+                        <option value="gardening">Gardening</option>
+                        <option value="gutter-cleaning">Gutter Cleaning</option>
+                        <option value="removals">Removals</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="booking-date">Preferred Date</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-time">Preferred Time</label>
+                    <select id="booking-time" required>
+                        <option value="">Select time</option>
+                        <option value="morning">Morning (8AM-12PM)</option>
+                        <option value="afternoon">Afternoon (12PM-4PM)</option>
+                        <option value="evening">Evening (4PM-6PM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="booking-name">Your Name</label>
+                    <input type="text" id="booking-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-phone">Phone Number</label>
+                    <input type="tel" id="booking-phone" required>
+                </div>
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Services Data with detailed information
+        const services = [
+            {
+                name: 'Handyman',
+                icon: 'fa-tools',
+                category: 'maintenance',
+                description: 'General repairs and maintenance for your home',
+                image: 'handyman.webp',
+                fullDescription: 'Our handyman services cover all aspects of home maintenance and repair. From fixing leaky faucets to assembling furniture, our skilled handymen can handle it all.',
+                fullDescription2: 'We bring all necessary tools and materials to complete the job efficiently. Whether it\'s a small repair or a list of tasks, we\'re here to help maintain your home in perfect condition.',
+                features: [
+                    { icon: 'fa-check', title: 'Minor Repairs', desc: 'Fixing doors, windows, and small household issues' },
+                    { icon: 'fa-check', title: 'Furniture Assembly', desc: 'Professional assembly of all types of furniture' },
+                    { icon: 'fa-check', title: 'Maintenance', desc: 'Regular home maintenance to prevent future issues' },
+                    { icon: 'fa-check', title: 'Installation', desc: 'Installing shelves, mirrors, and wall fixtures' }
+                ]
+            },
+            {
+                name: 'Electrical',
+                icon: 'fa-bolt',
+                category: 'installation',
+                description: 'Professional electrical installations and repairs',
+                image: 'electrical.jpeg',
+                fullDescription: 'Our certified electricians provide safe and reliable electrical services for your home. From simple repairs to complete rewiring, we ensure all work meets safety standards.',
+                fullDescription2: 'We handle everything from installing new outlets and light fixtures to upgrading your electrical panel. All our electricians are licensed and insured for your peace of mind.',
+                features: [
+                    { icon: 'fa-check', title: 'Wiring & Rewiring', desc: 'Complete electrical wiring solutions' },
+                    { icon: 'fa-check', title: 'Lighting Installation', desc: 'Indoor and outdoor lighting fixtures' },
+                    { icon: 'fa-check', title: 'Panel Upgrades', desc: 'Modern electrical panel installations' },
+                    { icon: 'fa-check', title: 'Safety Inspections', desc: 'Thorough electrical safety checks' }
+                ]
+            },
+            {
+                name: 'Plumbing',
+                icon: 'fa-wrench',
+                category: 'repair',
+                description: 'Expert plumbing services for all your needs',
+                image: 'plumbing',
+                fullDescription: 'Professional plumbing services for installations, repairs, and maintenance. Our experienced plumbers handle everything from minor leaks to major pipe replacements.',
+                fullDescription2: 'We offer 24/7 emergency plumbing services for urgent issues. Our team is equipped with the latest tools to diagnose and fix plumbing problems quickly and efficiently.',
+                features: [
+                    { icon: 'fa-check', title: 'Leak Repairs', desc: 'Fixing leaks in pipes, faucets, and fixtures' },
+                    { icon: 'fa-check', title: 'Drain Cleaning', desc: 'Professional drain unclogging services' },
+                    { icon: 'fa-check', title: 'Pipe Installation', desc: 'New pipe installation and replacements' },
+                    { icon: 'fa-check', title: 'Water Heater', desc: 'Installation and repair of water heaters' }
+                ]
+            },
+            {
+                name: 'Carpentry',
+                icon: 'fa-hammer',
+                category: 'installation',
+                description: 'Custom carpentry and woodwork solutions',
+                image: 'carpentry',
+                fullDescription: 'Expert carpentry services for custom woodwork, furniture, and structural repairs. Our skilled carpenters bring your vision to life with precision craftsmanship.',
+                fullDescription2: 'From custom cabinets and shelving to deck construction and repair, we handle all types of carpentry projects. We work with various wood types and finishes to match your style.',
+                features: [
+                    { icon: 'fa-check', title: 'Custom Furniture', desc: 'Bespoke furniture design and creation' },
+                    { icon: 'fa-check', title: 'Cabinetry', desc: 'Custom kitchen and bathroom cabinets' },
+                    { icon: 'fa-check', title: 'Deck Building', desc: 'Outdoor deck construction and repair' },
+                    { icon: 'fa-check', title: 'Trim & Molding', desc: 'Professional installation of trim and molding' }
+                ]
+            },
+            {
+                name: 'Decorating',
+                icon: 'fa-paint-brush',
+                category: 'installation',
+                description: 'Interior and exterior painting services',
+                image: 'decorating',
+                fullDescription: 'Professional painting and decorating services to transform your space. We use high-quality paints and materials to ensure a flawless finish that lasts.',
+                fullDescription2: 'Our team handles everything from surface preparation to final touches. We offer color consultation and can work with any style, from modern to traditional.',
+                features: [
+                    { icon: 'fa-check', title: 'Interior Painting', desc: 'Professional interior wall and ceiling painting' },
+                    { icon: 'fa-check', title: 'Exterior Painting', desc: 'Durable exterior paint applications' },
+                    { icon: 'fa-check', title: 'Wallpaper', desc: 'Professional wallpaper installation' },
+                    { icon: 'fa-check', title: 'Color Consultation', desc: 'Expert color matching and advice' }
+                ]
+            },
+            {
+                name: 'Locksmith',
+                icon: 'fa-lock',
+                category: 'repair',
+                description: 'Professional locksmith and security services',
+                image: 'locksmith',
+                fullDescription: 'Reliable locksmith services for all your security needs. From emergency lockouts to security system installations, we keep your property safe and secure.',
+                fullDescription2: 'Our certified locksmiths are available 24/7 for emergency services. We work with all types of locks and security systems, providing fast and professional service.',
+                features: [
+                    { icon: 'fa-check', title: 'Emergency Lockout', desc: '24/7 emergency lockout assistance' },
+                    { icon: 'fa-check', title: 'Lock Installation', desc: 'New lock installation and replacement' },
+                    { icon: 'fa-check', title: 'Key Duplication', desc: 'Professional key cutting services' },
+                    { icon: 'fa-check', title: 'Security Systems', desc: 'Advanced security system installation' }
+                ]
+            },
+            {
+                name: 'Cleaning',
+                icon: 'fa-broom',
+                category: 'maintenance',
+                description: 'Deep cleaning and regular maintenance',
+                image: 'cleaning',
+                fullDescription: 'Comprehensive cleaning services for homes and offices. Our professional cleaners use eco-friendly products and advanced equipment to deliver exceptional results.',
+                fullDescription2: 'We offer one-time deep cleaning, regular maintenance cleaning, and post-construction cleanup. Our team is trained, insured, and dedicated to exceeding your expectations.',
+                features: [
+                    { icon: 'fa-check', title: 'Deep Cleaning', desc: 'Thorough cleaning of all areas' },
+                    { icon: 'fa-check', title: 'Regular Maintenance', desc: 'Scheduled cleaning services' },
+                    { icon: 'fa-check', title: 'Carpet Cleaning', desc: 'Professional carpet and upholstery cleaning' },
+                    { icon: 'fa-check', title: 'Window Cleaning', desc: 'Streak-free window cleaning service' }
+                ]
+            },
+            {
+                name: 'Flooring',
+                icon: 'fa-th',
+                category: 'installation',
+                description: 'Floor installation and repair services',
+                image: 'flooring',
+                fullDescription: 'Professional flooring installation and repair services. We work with all types of flooring materials to create beautiful, durable floors for your home.',
+                fullDescription2: 'From hardwood and laminate to tile and vinyl, our experts handle every aspect of flooring installation. We ensure proper preparation and precise installation for lasting results.',
+                features: [
+                    { icon: 'fa-check', title: 'Hardwood Flooring', desc: 'Installation and refinishing of hardwood floors' },
+                    { icon: 'fa-check', title: 'Tile Installation', desc: 'Professional tile flooring installation' },
+                    { icon: 'fa-check', title: 'Laminate Flooring', desc: 'Quick and clean laminate installation' },
+                    { icon: 'fa-check', title: 'Floor Repair', desc: 'Repairing damaged flooring sections' }
+                ]
+            },
+            {
+                name: 'Roofing',
+                icon: 'fa-home',
+                category: 'repair',
+                description: 'Roof repair, replacement, and maintenance',
+                image: 'roofing',
+                fullDescription: 'Complete roofing services to protect your home. From minor repairs to full roof replacement, our experienced roofers ensure quality workmanship.',
+                fullDescription2: 'We work with all roofing materials and provide thorough inspections to identify issues early. Our team is licensed, insured, and committed to protecting your investment.',
+                features: [
+                    { icon: 'fa-check', title: 'Roof Repair', desc: 'Fixing leaks and damaged areas' },
+                    { icon: 'fa-check', title: 'Roof Replacement', desc: 'Complete roof replacement services' },
+                    { icon: 'fa-check', title: 'Gutter Installation', desc: 'Professional gutter system installation' },
+                    { icon: 'fa-check', title: 'Inspections', desc: 'Thorough roof condition assessments' }
+                ]
+            },
+            {
+                name: 'Plastering',
+                icon: 'fa-trowel',
+                category: 'installation',
+                description: 'Professional plastering and wall finishing',
+                image: 'plastering',
+                fullDescription: 'Expert plastering services for smooth, flawless walls. Our skilled plasterers handle everything from small repairs to complete wall resurfacing.',
+                fullDescription2: 'We use traditional and modern plastering techniques to achieve perfect results. Whether you need repair work or a complete finish, we deliver professional quality.',
+                features: [
+                    { icon: 'fa-check', title: 'Wall Plastering', desc: 'Smooth wall plaster application' },
+                    { icon: 'fa-check', title: 'Ceiling Plastering', desc: 'Professional ceiling finishing' },
+                    { icon: 'fa-check', title: 'Repair Work', desc: 'Fixing cracks and damaged plaster' },
+                    { icon: 'fa-check', title: 'Skimming', desc: 'Thin coat plaster for perfect finish' }
+                ]
+            },
+            {
+                name: 'Gardening',
+                icon: 'fa-leaf',
+                category: 'maintenance',
+                description: 'Garden design and maintenance services',
+                image: 'gardening',
+                fullDescription: 'Professional gardening services to create and maintain beautiful outdoor spaces. From landscape design to regular maintenance, we transform your garden.',
+                fullDescription2: 'Our horticulture experts design gardens that complement your home and lifestyle. We handle planting, pruning, lawn care, and ongoing maintenance to keep your garden thriving.',
+                features: [
+                    { icon: 'fa-check', title: 'Landscape Design', desc: 'Custom garden design and planning' },
+                    { icon: 'fa-check', title: 'Lawn Care', desc: 'Professional lawn maintenance' },
+                    { icon: 'fa-check', title: 'Planting', desc: 'Expert plant selection and installation' },
+                    { icon: 'fa-check', title: 'Garden Maintenance', desc: 'Regular upkeep and pruning services' }
+                ]
+            },
+            {
+                name: 'Gutter Cleaning',
+                icon: 'fa-water',
+                category: 'maintenance',
+                description: 'Professional gutter cleaning and maintenance',
+                image: 'gutter',
+                fullDescription: 'Essential gutter cleaning services to protect your home from water damage. Our team removes debris and ensures proper water flow.',
+                fullDescription2: 'Regular gutter cleaning prevents water damage to your roof, walls, and foundation. We provide thorough cleaning and can install gutter guards for long-term protection.',
+                features: [
+                    { icon: 'fa-check', title: 'Debris Removal', desc: 'Complete gutter cleaning service' },
+                    { icon: 'fa-check', title: 'Downspout Cleaning', desc: 'Clearing downspouts for proper drainage' },
+                    { icon: 'fa-check', title: 'Gutter Repair', desc: 'Fixing damaged gutter sections' },
+                    { icon: 'fa-check', title: 'Gutter Guards', desc: 'Installation of protective gutter guards' }
+                ]
+            },
+            {
+                name: 'Removals',
+                icon: 'fa-truck',
+                category: 'maintenance',
+                description: 'Professional moving and removal services',
+                image: 'removals',
+                fullDescription: 'Stress-free moving services for homes and offices. Our professional team handles everything from packing to transportation with care.',
+                fullDescription2: 'We provide complete moving solutions including packing, loading, transportation, and unpacking. Our team ensures your belongings arrive safely at your new location.',
+                features: [
+                    { icon: 'fa-check', title: 'Packing Services', desc: 'Professional packing of all items' },
+                    { icon: 'fa-check', title: 'Transportation', desc: 'Safe and reliable moving services' },
+                    { icon: 'fa-check', title: 'Loading & Unloading', desc: 'Careful handling of all belongings' },
+                    { icon: 'fa-check', title: 'Storage Solutions', desc: 'Secure storage options available' }
+                ]
+            }
+        ];
+
+        let currentService = null;
+
+        // Initialize services
+        function initServices() {
+            const servicesGrid = document.getElementById('servicesGrid');
+            servicesGrid.innerHTML = '';
+            
+            services.forEach((service, index) => {
+                const serviceCard = document.createElement('div');
+                serviceCard.className = 'service-card';
+                serviceCard.dataset.category = service.category;
+                serviceCard.innerHTML = `
+                    <div class="service-icon">
+                        <i class="fas ${service.icon}"></i>
+                    </div>
+                    <h3>${service.name}</h3>
+                    <p>${service.description}</p>
+                    <a href="#" class="see-more" onclick="showServiceDetail('${service.name}'); return false;">
+                        See More <i class="fas fa-arrow-right"></i>
+                    </a>
+                `;
+                servicesGrid.appendChild(serviceCard);
+            });
+        }
+
+        // Show service detail modal
+        function showServiceDetail(serviceName) {
+            const service = services.find(s => s.name === serviceName);
+            if (!service) return;
+            
+            currentService = service;
+            
+            document.getElementById('serviceDetailImage').src = `${service.image}`;
+            document.getElementById('serviceDetailIcon').className = `fas ${service.icon}`;
+            document.getElementById('serviceDetailTitle').textContent = service.name;
+            document.getElementById('serviceDetailDescription').textContent = service.fullDescription;
+            document.getElementById('serviceDetailDescription2').textContent = service.fullDescription2;
+            
+            // Add features
+            const featuresContainer = document.getElementById('serviceFeatures');
+            featuresContainer.innerHTML = '';
+            service.features.forEach(feature => {
+                const featureDiv = document.createElement('div');
+                featureDiv.className = 'feature-item';
+                featureDiv.innerHTML = `
+                    <i class="fas ${feature.icon}"></i>
+                    <div>
+                        <h4>${feature.title}</h4>
+                        <p>${feature.desc}</p>
+                    </div>
+                `;
+                featuresContainer.appendChild(featureDiv);
+            });
+            
+            document.getElementById('serviceDetailModal').classList.add('active');
+        }
+
+        // Close service detail modal
+        function closeServiceDetail() {
+            document.getElementById('serviceDetailModal').classList.remove('active');
+        }
+
+        // Book service from detail modal
+        function bookServiceFromDetail() {
+            if (currentService) {
+                closeServiceDetail();
+                openBookingModal();
+                document.getElementById('booking-service').value = currentService.name.toLowerCase().replace(' ', '-');
+            }
+        }
+
+        // Get quote from detail modal
+        function getQuoteFromDetail() {
+            if (currentService) {
+                closeServiceDetail();
+                document.getElementById('service').value = currentService.name.toLowerCase().replace(' ', '-');
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Filter services
+        function filterServices(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.service-card');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(category) || 
+                    (category === 'all' && btn.textContent === 'All Services')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.animation = 'fadeInUp 0.5s ease';
+                    }, 100);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function showTestimonial(index) {
+            testimonials.forEach(t => t.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Modal functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+        }
+
+        // Form submissions
+        function handleSubmit(event) {
+            event.preventDefault();
+            showToast('Thank you! We\'ll contact you within 24 hours.');
+            event.target.reset();
+        }
+
+        function handleBooking(event) {
+            event.preventDefault();
+            showToast('Booking confirmed! We\'ll send you a confirmation shortly.');
+            closeBookingModal();
+            event.target.reset();
+        }
+
+        // Toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.padding = '1rem';
+                navLinks.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            }
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            initServices();
+        });
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const bookingModal = document.getElementById('bookingModal');
+            const serviceModal = document.getElementById('serviceDetailModal');
+            
+            if (event.target === bookingModal) {
+                closeBookingModal();
+            }
+            if (event.target === serviceModal) {
+                closeServiceDetail();
+            }
+        }
+    </script>
+</body>
+</html>
